@@ -1,23 +1,29 @@
-/* Reset everything */
+/* Reset everything _____________________________________________*/
 body {
     margin: 0;
     padding: 0;
     background-color: #F8F7E8;
-    font-family: 'Space Mono', monospace;
-    font-size: 15px;
+    font-family: 'Mulish', sans-serif;
+    font-size: 18px;
     h1,h2,h3,h4,h5,h6 {
         margin: 0;
     }
+    button {
+        font-family: 'Mulish', sans-serif;
+    }
+    a {
+        text-decoration: none;
+    }
 }
 
-/* Container */
+/* Container _____________________________________________*/
 .container {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Header */
+/* Header _____________________________________________*/
 .header {
     .header__inner {
         display: flex;
@@ -39,7 +45,7 @@ body {
     }
 }
 
-/* Intro _____________________*/
+/* Intro _____________________________________________*/
 
 .intro {
     height: 100vh;
@@ -52,12 +58,15 @@ body {
         width: 50%;
     }
     .intro__title {
-        font-size: 45px;
+        font-family: 'Didact Gothic', sans-serif;
+        font-size: 65px;
         margin-bottom: 20px;
         font-weight: 700;
     }
     .intro__subtitle {
-        font-size: 28px;
+        font-family: 'Overpass Mono', monospace;
+        font-size: 35px;
+        color: rgb(70, 70, 70);
         line-height: 1.2;
         margin-bottom: 20px;
     }
@@ -75,12 +84,13 @@ body {
     }
 }
 
-/* Typing message */
+/* Typing message _____________________________________________*/
 .intro__type {
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'Overpass Mono', monospace;
     font-size: 25px;
 
     .type__text {
@@ -117,73 +127,95 @@ body {
     }
 }
 
-/* Projects */
-.section__title {
-    margin-bottom: 40px;
-    font-size: 30px;
-    font-weight: 700;        
-}
-.project__inner {
-    .project__item {
-        margin-top: 10px;
-        background-color: #fff;
-        border-radius: 25px;
+/* Projects _____________________________________________*/
+.project {
+    height: 100vh;
+
+    .project__inner {
         display: grid;
-        gap: 20px;
-        grid-template-columns: 40% 60%;
+        gap: 10px;
+        grid-template-columns: 33% 33% 33%;
+    }
+    .project__item {
+        background-color: #fff;
+        border-radius: 10px;
+    }
+    .info {
+        margin: 15px;
+        display: grid;
+        gap: 18px;
     }
     .img {
-        border-radius: 25px 0 0 25px;
+        border-radius: 10px 10px 0 0;
         width: 100%;
-    }
-    .links {
-        margin-top: 15px;
-    }
-    .description {
-        margin-top: 15px;
-        max-width: 650px;
-    }
-    .stack {
-        margin-top: 15px;
     }
     .btn {
         background-color: #000;
         color: #fff;
         border-radius: 5px;
         padding: 5px 20px;
+        font-size: 16px;
+    }
+    .stack { 
+        width: 90%;
+        display: flex;
+        gap: 5px;
+        flex-wrap: wrap;
+
     }
     .stack__item {
         background-color: #000;
         color: #fff;
         border-radius: 5px;
         padding: 5px 15px;
-        font-size: 12px;
+        font-size: 15px;
     }
     span {
         font-weight: 700;
     }
 }
 
-
-/* About me */
+.section__title {
+    font-family: 'Overpass Mono', monospace;
+    margin-bottom: 40px;
+    font-size: 40px;
+}
+/* About me _____________________________________________*/
 .about {
     margin-top: 160px;
-}
-.about__inner {
-    display: flex;
-    
-    .about__item {
-        width: 50%;
+    height: 50vh;
+
+    .about__inner {
+        display: grid;
+        gap: 50px;
+        grid-template-columns: 50% 50%;
     }
-    .about__title {
+    .about__subtitle {
+        font-size: 30px;
+    }
+    .about__text {
+        font-size: 22px;
+    }
+    .skill__title {
+        font-size: 30px;
         font-weight: 700;
+        font-family: 'Overpass Mono', monospace;
+    }
+    .skill__items {
+        margin-top: 20px;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        width: 80%;
     }
     .skill__item {
-        text-decoration: none;
         background-color: #000;
         color: #fff;
+        border-radius: 5px;
+        padding: 5px 15px;
     }
 }
+
 
 
 

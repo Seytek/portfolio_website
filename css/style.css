@@ -1,24 +1,30 @@
 @charset "UTF-8";
-/* Reset everything */
+/* Reset everything _____________________________________________*/
 body {
   margin: 0;
   padding: 0;
   background-color: #F8F7E8;
-  font-family: 'Space Mono', monospace;
-  font-size: 15px;
+  font-family: 'Mulish', sans-serif;
+  font-size: 18px;
 }
 body h1, body h2, body h3, body h4, body h5, body h6 {
   margin: 0;
 }
+body button {
+  font-family: 'Mulish', sans-serif;
+}
+body a {
+  text-decoration: none;
+}
 
-/* Container */
+/* Container _____________________________________________*/
 .container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* Header */
+/* Header _____________________________________________*/
 .header .header__inner {
   display: flex;
   justify-content: space-between;
@@ -38,7 +44,7 @@ body h1, body h2, body h3, body h4, body h5, body h6 {
   color: #000;
 }
 
-/* Intro _____________________*/
+/* Intro _____________________________________________*/
 .intro {
   height: 100vh;
 }
@@ -50,12 +56,15 @@ body h1, body h2, body h3, body h4, body h5, body h6 {
   width: 50%;
 }
 .intro .intro__title {
-  font-size: 45px;
+  font-family: 'Didact Gothic', sans-serif;
+  font-size: 65px;
   margin-bottom: 20px;
   font-weight: 700;
 }
 .intro .intro__subtitle {
-  font-size: 28px;
+  font-family: 'Overpass Mono', monospace;
+  font-size: 35px;
+  color: #464646;
   line-height: 1.2;
   margin-bottom: 20px;
 }
@@ -72,12 +81,13 @@ body h1, body h2, body h3, body h4, body h5, body h6 {
   background-color: #000;
 }
 
-/* Typing message */
+/* Typing message _____________________________________________*/
 .intro__type {
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: 'Overpass Mono', monospace;
   font-size: 25px;
 }
 .intro__type .type__text {
@@ -112,70 +122,91 @@ body h1, body h2, body h3, body h4, body h5, body h6 {
     background: transparent;
   }
 }
-/* Projects */
-.section__title {
-  margin-bottom: 40px;
-  font-size: 30px;
-  font-weight: 700;
+/* Projects _____________________________________________*/
+.project {
+  height: 100vh;
 }
-
-.project__inner .project__item {
-  margin-top: 10px;
-  background-color: #fff;
-  border-radius: 25px;
+.project .project__inner {
   display: grid;
-  gap: 20px;
-  grid-template-columns: 40% 60%;
+  gap: 10px;
+  grid-template-columns: 33% 33% 33%;
 }
-.project__inner .img {
-  border-radius: 25px 0 0 25px;
+.project .project__item {
+  background-color: #fff;
+  border-radius: 10px;
+}
+.project .info {
+  margin: 15px;
+  display: grid;
+  gap: 18px;
+}
+.project .img {
+  border-radius: 10px 10px 0 0;
   width: 100%;
 }
-.project__inner .links {
-  margin-top: 15px;
-}
-.project__inner .description {
-  margin-top: 15px;
-  max-width: 650px;
-}
-.project__inner .stack {
-  margin-top: 15px;
-}
-.project__inner .btn {
+.project .btn {
   background-color: #000;
   color: #fff;
   border-radius: 5px;
   padding: 5px 20px;
+  font-size: 16px;
 }
-.project__inner .stack__item {
+.project .stack {
+  width: 90%;
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+.project .stack__item {
   background-color: #000;
   color: #fff;
   border-radius: 5px;
   padding: 5px 15px;
-  font-size: 12px;
+  font-size: 15px;
 }
-.project__inner span {
+.project span {
   font-weight: 700;
 }
 
-/* About me */
+.section__title {
+  font-family: 'Overpass Mono', monospace;
+  margin-bottom: 40px;
+  font-size: 40px;
+}
+
+/* About me _____________________________________________*/
 .about {
   margin-top: 160px;
+  height: 50vh;
 }
-
-.about__inner {
-  display: flex;
+.about .about__inner {
+  display: grid;
+  gap: 50px;
+  grid-template-columns: 50% 50%;
 }
-.about__inner .about__item {
-  width: 50%;
+.about .about__subtitle {
+  font-size: 30px;
 }
-.about__inner .about__title {
+.about .about__text {
+  font-size: 22px;
+}
+.about .skill__title {
+  font-size: 30px;
   font-weight: 700;
+  font-family: 'Overpass Mono', monospace;
 }
-.about__inner .skill__item {
-  text-decoration: none;
+.about .skill__items {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  width: 80%;
+}
+.about .skill__item {
   background-color: #000;
   color: #fff;
+  border-radius: 5px;
+  padding: 5px 15px;
 }
 
 /* Footer */
