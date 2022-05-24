@@ -65,8 +65,8 @@ body {
     }
     .intro__subtitle {
         font-family: 'Overpass Mono', monospace;
-        font-size: 35px;
-        color: rgb(70, 70, 70);
+        font-size: 25px;
+        color: rgb(107, 107, 107);
         line-height: 1.2;
         margin-bottom: 20px;
     }
@@ -180,9 +180,10 @@ body {
     margin-bottom: 40px;
     font-size: 40px;
 }
+
 /* About me _____________________________________________*/
 .about {
-    margin-top: 160px;
+    margin: 160px 0px 100px 0px;
     height: 50vh;
 
     .about__inner {
@@ -215,6 +216,49 @@ body {
         padding: 5px 15px;
     }
 }
+
+
+
+/* About me _____________________________________________*/
+.contact {
+    margin: 0px 0px 100px 0px;
+
+    .section__title {
+        text-align: center;
+    }
+    .contact__inner {
+        width: 50%;
+        margin: 0 auto;
+    }
+    .form__item { 
+        width: 100%;
+        display: grid;
+        gap: 5px;
+    }
+    .form__input {
+        margin: 5px 0px 0px 0px;
+        font-size: inherit;
+        border-radius: 5px;
+        min-height: 30px;
+        padding: 5px 10px;
+    }
+    textarea {
+        font-size: inherit;
+        min-height: 100px;
+        resize: vertical;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+    .btn {
+        color: #fff;
+        background-color: #000;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 20px;
+        margin: 10px 0px 0px 0px;
+    }
+}
+
 
 
 
