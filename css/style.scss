@@ -45,12 +45,17 @@ body {
         margin-left: 30px;
         text-decoration: none;
         color: $color_1;
+        opacity: 0.75;
+        transition: 0.2s linear;
     }
     .header__logo {
         font-size: 40px;
         font-weight: 700;
         text-decoration: none;
         color: $color_1
+    }
+    .nav__link:hover {
+        opacity: 1;
     }
 }
 
@@ -80,15 +85,6 @@ body {
     }
     .intro__media {
         margin-bottom: 20px;
-    }
-    .intro__btn {
-        width: 280px;
-        padding: 15px 0;
-        border-radius: 5px;
-        font-size: 20px;
-        cursor: pointer;
-        color: $color_2;
-        background-color: $color_1;
     }
 }
 
@@ -177,16 +173,16 @@ body {
         font-size: 15px;
     }
     .links {
-        margin-top: 50px;
+        margin: 50px 0px 10px 0px;
     }
     .btn {
-        background-color: $color_1;
-        color: $color_2;
-        border-radius: 5px;
         padding: 8px 30px;
+        background-color: $color_1;
+        border-radius: 5px;
+        border: 1px solid black;
         font-size: 18px;
         font-weight: 500;
-        border: 1px solid black;
+        color: $color_2;
     }
     .btn_code {
         background: $color_2;
@@ -207,7 +203,7 @@ body {
 // About me ____________________________________________________
 .about {
     margin: 160px 0px 100px 0px;
-    height: 50vh;
+    height: 70vh;
 
     .about__inner {
         display: grid;
@@ -272,12 +268,13 @@ body {
         border-radius: 5px;
     }
     .btn {
-        color: $color_2;
+        width: 25%;
+        margin: 10px auto;
+        padding: 10px 20px;
         background-color: $color_1;
         border-radius: 5px;
-        padding: 10px 20px;
         font-size: 20px;
-        margin: 10px 0px 0px 0px;
+        color: $color_2;
     }
 }
 
