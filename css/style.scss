@@ -33,7 +33,7 @@ body {
 }
 
 // Header ____________________________________________________
-header {
+.header {
     .header__inner {
         display: flex;
         justify-content: space-between;
@@ -283,7 +283,7 @@ header {
 
 
 // Footer ____________________________________________________
-footer {
+.footer {
     background-color: $bgColorFooter;
     color: $color_3;
 

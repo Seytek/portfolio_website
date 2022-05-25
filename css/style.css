@@ -22,19 +22,19 @@ body a {
   margin: 0 auto;
 }
 
-header .header__inner {
+.header .header__inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 0;
 }
-header .nav__link {
+.header .nav__link {
   font-size: 20px;
   margin-left: 30px;
   text-decoration: none;
   color: #000;
 }
-header .header__logo {
+.header .header__logo {
   font-size: 40px;
   font-weight: 700;
   text-decoration: none;
@@ -253,21 +253,21 @@ header .header__logo {
   margin: 10px 0px 0px 0px;
 }
 
-footer {
+.footer {
   background-color: #282828;
   color: #6b6b6b;
 }
-footer .footer__inner {
+.footer .footer__inner {
   display: flex;
   justify-content: space-between;
   padding: 30px 0;
 }
-footer .footer__title {
+.footer .footer__title {
   font-size: 20px;
   font-weight: 700;
   color: #bbbbbb;
 }
-footer .footer__text,
-footer .footer__link {
+.footer .footer__text,
+.footer .footer__link {
   color: #6b6b6b;
 }
