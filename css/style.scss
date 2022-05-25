@@ -1,8 +1,17 @@
-/* Reset everything _____________________________________________*/
+// Variables
+$bgColor: #F8F7E8;
+$bgColorFooter: #282828;
+$color_1: #000;
+$color_2: #fff;
+$color_3: rgb(107, 107, 107);
+
+
+
+// Reset ____________________________________________________
 body {
     margin: 0;
     padding: 0;
-    background-color: #F8F7E8;
+    background: $bgColor;
     font-family: 'Mulish', sans-serif;
     font-size: 18px;
     h1,h2,h3,h4,h5,h6 {
@@ -16,15 +25,15 @@ body {
     }
 }
 
-/* Container _____________________________________________*/
+// Container ____________________________________________________
 .container {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Header _____________________________________________*/
-.header {
+// Header ____________________________________________________
+header {
     .header__inner {
         display: flex;
         justify-content: space-between;
@@ -35,18 +44,17 @@ body {
         font-size: 20px;
         margin-left: 30px;
         text-decoration: none;
-        color: #000;
+        color: $color_1;
     }
     .header__logo {
         font-size: 40px;
         font-weight: 700;
         text-decoration: none;
-        color: #000;
+        color: $color_1
     }
 }
 
-/* Intro _____________________________________________*/
-
+// Intro ____________________________________________________
 .intro {
     height: 100vh;
 
@@ -66,7 +74,7 @@ body {
     .intro__subtitle {
         font-family: 'Overpass Mono', monospace;
         font-size: 25px;
-        color: rgb(107, 107, 107);
+        color: $color_3;
         line-height: 1.2;
         margin-bottom: 20px;
     }
@@ -79,12 +87,12 @@ body {
         border-radius: 5px;
         font-size: 20px;
         cursor: pointer;
-        color: #fff;
-        background-color: #000;
+        color: $color_2;
+        background-color: $color_1;
     }
 }
 
-/* Typing message _____________________________________________*/
+//Typing message ____________________________________________________
 .intro__type {
     height: 100%;
     display: flex;
@@ -106,12 +114,12 @@ body {
         bottom: 0;
     }
     .type__text::before {
-        background-color: #F8F7E8;
+        background-color: $bgColor;
         animation: typewriter 4s steps(26) 1s forwards; /*forwards - не возобновляет аниманию заново*/
     }
     .type__text::after {
         width: 3.5px;
-        background: #000;
+        background: $color_1;
         animation: typewriter 4s steps(26) 1s forwards,
         blink 750ms steps(26) infinite;
     }
@@ -127,7 +135,7 @@ body {
     }
 }
 
-/* Projects _____________________________________________*/
+// Projects ____________________________________________________
 .project {
     height: 100vh;
 
@@ -137,24 +145,22 @@ body {
         grid-template-columns: 33% 33% 33%;
     }
     .project__item {
-        background-color: #fff;
+        background-color: $color_2;
         border-radius: 10px;
     }
-    .info {
+    .project__img {
+        border-radius: 10px 10px 0 0;
+        width: 100%;
+    }
+
+    .project__info {
         margin: 15px;
         display: grid;
         gap: 18px;
     }
-    .img {
-        border-radius: 10px 10px 0 0;
-        width: 100%;
-    }
-    .btn {
-        background-color: #000;
-        color: #fff;
-        border-radius: 5px;
-        padding: 5px 20px;
-        font-size: 16px;
+    .project__name {
+        font-size: 26px;
+        font-weight: 700;
     }
     .stack { 
         width: 90%;
@@ -165,23 +171,40 @@ body {
     }
     .stack__item {
         background-color: #000;
-        color: #fff;
+        color: $color_2;
         border-radius: 5px;
         padding: 5px 15px;
         font-size: 15px;
+    }
+    .links {
+        margin-top: 50px;
+    }
+    .btn {
+        background-color: $color_1;
+        color: $color_2;
+        border-radius: 5px;
+        padding: 8px 30px;
+        font-size: 18px;
+        font-weight: 500;
+        border: 1px solid black;
+    }
+    .btn_code {
+        background: $color_2;
+        color: $color_1;
     }
     span {
         font-weight: 700;
     }
 }
 
+// Title of section ____________________________________________________
 .section__title {
     font-family: 'Overpass Mono', monospace;
     margin-bottom: 40px;
     font-size: 40px;
 }
 
-/* About me _____________________________________________*/
+// About me ____________________________________________________
 .about {
     margin: 160px 0px 100px 0px;
     height: 50vh;
@@ -210,16 +233,15 @@ body {
         width: 80%;
     }
     .skill__item {
-        background-color: #000;
-        color: #fff;
+        background-color: $color_1;
+        color: $color_2;
         border-radius: 5px;
         padding: 5px 15px;
     }
 }
 
 
-
-/* About me _____________________________________________*/
+// Contact me ____________________________________________________
 .contact {
     margin: 0px 0px 100px 0px;
 
@@ -250,8 +272,8 @@ body {
         border-radius: 5px;
     }
     .btn {
-        color: #fff;
-        background-color: #000;
+        color: $color_2;
+        background-color: $color_1;
         border-radius: 5px;
         padding: 10px 20px;
         font-size: 20px;
@@ -260,52 +282,10 @@ body {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Footer */
-.footer {
-    background-color: #282828;
-    color: rgb(229, 229, 229);
+// Footer ____________________________________________________
+footer {
+    background-color: $bgColorFooter;
+    color: $color_3;
 
     .footer__inner {
         display: flex;
@@ -315,10 +295,11 @@ body {
     .footer__title {
         font-size: 20px;
         font-weight: 700;
+        color: #bbbbbb;
     }
     .footer__text,
     .footer__link {
-        color: rgb(187, 187, 187);
+        color: $color_3;
     }
 }
 

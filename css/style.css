@@ -1,9 +1,8 @@
 @charset "UTF-8";
-/* Reset everything _____________________________________________*/
 body {
   margin: 0;
   padding: 0;
-  background-color: #F8F7E8;
+  background: #F8F7E8;
   font-family: 'Mulish', sans-serif;
   font-size: 18px;
 }
@@ -17,34 +16,31 @@ body a {
   text-decoration: none;
 }
 
-/* Container _____________________________________________*/
 .container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* Header _____________________________________________*/
-.header .header__inner {
+header .header__inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 0;
 }
-.header .nav__link {
+header .nav__link {
   font-size: 20px;
   margin-left: 30px;
   text-decoration: none;
   color: #000;
 }
-.header .header__logo {
+header .header__logo {
   font-size: 40px;
   font-weight: 700;
   text-decoration: none;
   color: #000;
 }
 
-/* Intro _____________________________________________*/
 .intro {
   height: 100vh;
 }
@@ -81,7 +77,6 @@ body a {
   background-color: #000;
 }
 
-/* Typing message _____________________________________________*/
 .intro__type {
   height: 100%;
   display: flex;
@@ -122,7 +117,6 @@ body a {
     background: transparent;
   }
 }
-/* Projects _____________________________________________*/
 .project {
   height: 100vh;
 }
@@ -135,21 +129,18 @@ body a {
   background-color: #fff;
   border-radius: 10px;
 }
-.project .info {
+.project .project__img {
+  border-radius: 10px 10px 0 0;
+  width: 100%;
+}
+.project .project__info {
   margin: 15px;
   display: grid;
   gap: 18px;
 }
-.project .img {
-  border-radius: 10px 10px 0 0;
-  width: 100%;
-}
-.project .btn {
-  background-color: #000;
-  color: #fff;
-  border-radius: 5px;
-  padding: 5px 20px;
-  font-size: 16px;
+.project .project__name {
+  font-size: 26px;
+  font-weight: 700;
 }
 .project .stack {
   width: 90%;
@@ -164,6 +155,22 @@ body a {
   padding: 5px 15px;
   font-size: 15px;
 }
+.project .links {
+  margin-top: 50px;
+}
+.project .btn {
+  background-color: #000;
+  color: #fff;
+  border-radius: 5px;
+  padding: 8px 30px;
+  font-size: 18px;
+  font-weight: 500;
+  border: 1px solid black;
+}
+.project .btn_code {
+  background: #fff;
+  color: #000;
+}
 .project span {
   font-weight: 700;
 }
@@ -174,7 +181,6 @@ body a {
   font-size: 40px;
 }
 
-/* About me _____________________________________________*/
 .about {
   margin: 160px 0px 100px 0px;
   height: 50vh;
@@ -209,7 +215,6 @@ body a {
   padding: 5px 15px;
 }
 
-/* About me _____________________________________________*/
 .contact {
   margin: 0px 0px 100px 0px;
 }
@@ -248,21 +253,21 @@ body a {
   margin: 10px 0px 0px 0px;
 }
 
-/* Footer */
-.footer {
+footer {
   background-color: #282828;
-  color: #e5e5e5;
+  color: #6b6b6b;
 }
-.footer .footer__inner {
+footer .footer__inner {
   display: flex;
   justify-content: space-between;
   padding: 30px 0;
 }
-.footer .footer__title {
+footer .footer__title {
   font-size: 20px;
   font-weight: 700;
-}
-.footer .footer__text,
-.footer .footer__link {
   color: #bbbbbb;
+}
+footer .footer__text,
+footer .footer__link {
+  color: #6b6b6b;
 }
