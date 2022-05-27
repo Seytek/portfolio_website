@@ -274,17 +274,18 @@ body {
 
 // Contact me ____________________________________________________
 .contact {
-    margin: 0px 0px 100px 0px;
 
-    .section__title {
-        text-align: center;
-    }
+
     .contact__inner {
-        width: 50%;
-        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 40% 60%;
+        background: #ebebeb;
     }
-    .form__item { 
-        width: 100%;
+    .links {}
+
+
+    .form__item {
+        width: 80%;
         display: grid;
         gap: 5px;
     }
@@ -304,7 +305,7 @@ body {
     }
     .btn {
         width: 25%;
-        margin: 10px auto;
+        margin: 10px 0px;
         padding: 10px 20px;
         background-color: $color_1;
         border-radius: 5px;

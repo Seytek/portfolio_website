@@ -241,18 +241,13 @@ body a {
   padding: 5px 15px;
 }
 
-.contact {
-  margin: 0px 0px 100px 0px;
-}
-.contact .section__title {
-  text-align: center;
-}
 .contact .contact__inner {
-  width: 50%;
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  background: #ebebeb;
 }
 .contact .form__item {
-  width: 100%;
+  width: 80%;
   display: grid;
   gap: 5px;
 }
@@ -272,7 +267,7 @@ body a {
 }
 .contact .btn {
   width: 25%;
-  margin: 10px auto;
+  margin: 10px 0px;
   padding: 10px 20px;
   background-color: #000;
   border-radius: 5px;
