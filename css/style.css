@@ -1,8 +1,12 @@
 @charset "UTF-8";
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
-  background: #F8F7E8;
+  background: #f8efe8;
   font-family: 'Mulish', sans-serif;
   font-size: 18px;
 }
@@ -20,8 +24,17 @@ body a {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  z-index: 1000;
 }
 
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #f8efe8;
+  border-bottom: 1px solid #b9b2b2;
+}
 .header .header__inner {
   display: flex;
   justify-content: space-between;
@@ -55,6 +68,22 @@ body a {
   width: 30px;
   background-color: #000;
   font-size: 0px;
+  position: relative;
+}
+.header .menu__item::before,
+.header .menu__item::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  position: absolute;
+  left: 0;
+}
+.header .menu__item::before {
+  top: -8px;
+}
+.header .menu__item::after {
+  top: 8px;
 }
 @media (max-width: 1300px) {
   .header .container {
@@ -78,10 +107,11 @@ body a {
 
 .intro {
   height: 100vh;
+  background: #f8efe8;
 }
 .intro .intro__inner {
   display: flex;
-  padding: 180px 0 0 0;
+  padding: 280px 0 0 0;
 }
 .intro .intro__item {
   width: 50%;
@@ -95,12 +125,19 @@ body a {
 .intro .intro__subtitle {
   font-family: 'Overpass Mono', monospace;
   font-size: 25px;
-  color: #6b6b6b;
+  color: #535353;
   line-height: 1.2;
   margin-bottom: 20px;
 }
 .intro .intro__media {
   margin-bottom: 20px;
+}
+.intro .btn {
+  font-size: inherit;
+  padding: 10px 30px;
+  border-radius: 5px;
+  background: #f8efe8;
+  font-size: 20px;
 }
 
 .intro__type {
@@ -124,7 +161,7 @@ body a {
   bottom: 0;
 }
 .intro__type .type__text::before {
-  background-color: #F8F7E8;
+  background-color: #f8efe8;
   animation: typewriter 4s steps(26) 1s forwards;
   /*forwards - не возобновляет аниманию заново*/
 }
@@ -145,6 +182,8 @@ body a {
 }
 .project {
   height: 100vh;
+  background: white;
+  padding: 50px 0px;
 }
 .project .project__inner {
   display: grid;
@@ -152,7 +191,7 @@ body a {
   grid-template-columns: 33% 33% 33%;
 }
 .project .project__item {
-  background-color: #fff;
+  background-color: #f8efe8;
   border-radius: 10px;
 }
 .project .project__img {
@@ -175,8 +214,9 @@ body a {
   flex-wrap: wrap;
 }
 .project .stack__item {
-  background-color: #000;
-  color: #fff;
+  background-color: #f8efe8;
+  color: #000;
+  border: 1px solid;
   border-radius: 5px;
   padding: 5px 15px;
   font-size: 15px;
@@ -191,25 +231,23 @@ body a {
   border: 1px solid black;
   font-size: 18px;
   font-weight: 500;
-  color: #fff;
+  color: white;
 }
 .project .btn_code {
-  background: #fff;
+  background: #f8efe8;
   color: #000;
-}
-.project span {
-  font-weight: 700;
 }
 
 .section__title {
   font-family: 'Overpass Mono', monospace;
   margin-bottom: 40px;
-  font-size: 40px;
+  font-size: 38px;
+  text-transform: uppercase;
 }
 
 .about {
   margin: 160px 0px 100px 0px;
-  height: 70vh;
+  height: 60vh;
 }
 .about .about__inner {
   display: grid;
@@ -232,52 +270,63 @@ body a {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
-  width: 80%;
+  width: 100%;
 }
 .about .skill__item {
   background-color: #000;
-  color: #fff;
+  color: white;
   border-radius: 5px;
   padding: 5px 15px;
 }
 
+.contact {
+  padding: 50px 0px;
+  background: white;
+}
 .contact .contact__inner {
+  background: #f8efe8;
   display: grid;
   grid-template-columns: 40% 60%;
-  background: #ebebeb;
+  border-radius: 20px;
 }
-.contact .form__item {
-  width: 80%;
+.contact .contact__links {
+  background-color: antiquewhite;
+}
+.contact .contact__form {
+  padding: 20px 70px;
   display: grid;
-  gap: 5px;
+  gap: 20px;
 }
 .contact .form__input {
-  margin: 5px 0px 0px 0px;
-  font-size: inherit;
   border-radius: 5px;
-  min-height: 30px;
+  min-height: 25px;
+  font-size: inherit;
   padding: 5px 10px;
+  border: none;
+  border-bottom: 1px solid gray;
 }
 .contact textarea {
-  font-size: inherit;
-  min-height: 100px;
+  border-radius: 5px;
   resize: vertical;
-  padding: 5px 10px;
-  border-radius: 5px;
+  border: 1px solid gray;
+  min-height: 120px;
 }
-.contact .btn {
-  width: 25%;
-  margin: 10px 0px;
-  padding: 10px 20px;
-  background-color: #000;
+.contact img {
+  height: 50px;
+  width: 50px;
+}
+.contact button {
+  max-width: 250px;
+  padding: 10px 0px;
   border-radius: 5px;
-  font-size: 20px;
-  color: #fff;
+  font-size: inherit;
+  background: #000;
+  color: white;
 }
 
 .footer {
   background-color: #282828;
-  color: #6b6b6b;
+  color: #535353;
 }
 .footer .footer__inner {
   display: flex;
@@ -291,5 +340,5 @@ body a {
 }
 .footer .footer__text,
 .footer .footer__link {
-  color: #6b6b6b;
+  color: #535353;
 }

@@ -1,13 +1,15 @@
 // Variables
-$bgColor: #F8F7E8;
+$bgColor: #f8efe8;
 $bgColorFooter: #282828;
 $color_1: #000;
-$color_2: #fff;
-$color_3: rgb(107, 107, 107);
-
+$color_2: white;
+$color_3: rgb(83, 83, 83);
 
 
 // Reset ____________________________________________________
+html {
+    scroll-behavior: smooth;
+}
 body {
     margin: 0;
     padding: 0;
@@ -30,10 +32,18 @@ body {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+    z-index: 1000;
 }
 
 // Header ____________________________________________________
 .header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0; // like margin: auto;
+    background: $bgColor;
+    border-bottom: 1px solid rgb(185, 178, 178);
+
     .header__inner {
         display: flex;
         justify-content: space-between;
@@ -71,8 +81,27 @@ body {
         width: 30px;
         background-color: $color_1;
         font-size: 0px;
+
+        position: relative;
     }
-    
+    .menu__item::before,
+    .menu__item::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: $color_1;
+
+        position: absolute;
+        left: 0;
+    }
+    .menu__item::before {
+        top: -8px;
+    }
+    .menu__item::after {
+        top: 8px;
+    }
+
+
     @media (max-width: 1300px) {
         .container {
             max-width: 991px;
@@ -97,10 +126,11 @@ body {
 // Intro ____________________________________________________
 .intro {
     height: 100vh;
+    background: $bgColor;
 
     .intro__inner {
         display: flex;
-        padding: 180px 0 0 0;
+        padding: 280px 0 0 0;
     }
     .intro__item {
         width: 50%;
@@ -120,6 +150,13 @@ body {
     }
     .intro__media {
         margin-bottom: 20px;
+    }
+    .btn {
+        font-size: inherit;
+        padding: 10px 30px;
+        border-radius: 5px;
+        background: $bgColor;
+        font-size: 20px;
     }
 }
 
@@ -169,6 +206,8 @@ body {
 // Projects ____________________________________________________
 .project {
     height: 100vh;
+    background: $color_2;
+    padding: 50px 0px;
 
     .project__inner {
         display: grid;
@@ -176,7 +215,7 @@ body {
         grid-template-columns: 33% 33% 33%;
     }
     .project__item {
-        background-color: $color_2;
+        background-color: $bgColor;
         border-radius: 10px;
     }
     .project__img {
@@ -201,8 +240,9 @@ body {
 
     }
     .stack__item {
-        background-color: #000;
-        color: $color_2;
+        background-color: $bgColor;
+        color: $color_1;
+        border: 1px solid;
         border-radius: 5px;
         padding: 5px 15px;
         font-size: 15px;
@@ -220,11 +260,8 @@ body {
         color: $color_2;
     }
     .btn_code {
-        background: $color_2;
+        background: $bgColor;
         color: $color_1;
-    }
-    span {
-        font-weight: 700;
     }
 }
 
@@ -232,13 +269,14 @@ body {
 .section__title {
     font-family: 'Overpass Mono', monospace;
     margin-bottom: 40px;
-    font-size: 40px;
+    font-size: 38px;
+    text-transform: uppercase;
 }
 
 // About me ____________________________________________________
 .about {
     margin: 160px 0px 100px 0px;
-    height: 70vh;
+    height: 60vh;
 
     .about__inner {
         display: grid;
@@ -261,7 +299,7 @@ body {
         display: flex;
         gap: 10px;
         flex-wrap: wrap;
-        width: 80%;
+        width: 100%;
     }
     .skill__item {
         background-color: $color_1;
@@ -274,42 +312,51 @@ body {
 
 // Contact me ____________________________________________________
 .contact {
+    padding: 50px 0px;
+    background: $color_2;
 
 
     .contact__inner {
+        background: $bgColor;
         display: grid;
         grid-template-columns: 40% 60%;
-        background: #ebebeb;
+        border-radius: 20px;
     }
-    .links {}
+    .contact__links {
+        background-color: antiquewhite;
+    }
 
 
-    .form__item {
-        width: 80%;
+
+    .contact__form {
+        padding: 20px 70px;
         display: grid;
-        gap: 5px;
+        gap: 20px;
     }
     .form__input {
-        margin: 5px 0px 0px 0px;
-        font-size: inherit;
         border-radius: 5px;
-        min-height: 30px;
+        min-height: 25px;
+        font-size: inherit;
         padding: 5px 10px;
+        border: none;
+        border-bottom: 1px solid gray;
     }
     textarea {
-        font-size: inherit;
-        min-height: 100px;
+        border-radius: 5px;
         resize: vertical;
-        padding: 5px 10px;
-        border-radius: 5px;
+        border: 1px solid gray;
+        min-height: 120px;
     }
-    .btn {
-        width: 25%;
-        margin: 10px 0px;
-        padding: 10px 20px;
-        background-color: $color_1;
+    img {
+        height: 50px;
+        width: 50px;
+    }
+    button {
+        max-width: 250px;
+        padding: 10px 0px;
         border-radius: 5px;
-        font-size: 20px;
+        font-size: inherit;
+        background: $color_1;
         color: $color_2;
     }
 }
@@ -335,7 +382,3 @@ body {
         color: $color_3;
     }
 }
-
-
-
-

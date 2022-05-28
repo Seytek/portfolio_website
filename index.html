@@ -27,10 +27,7 @@
                     <a href="#about" class="nav__link">About</a>
                     <a href="#contact" class="nav__link">Contact</a>
                 </nav>
-
                 <div class="menu">
-                    <div class="menu__item">Menu</div>
-                    <div class="menu__item">Menu</div>
                     <div class="menu__item">Menu</div>
                 </div>
             </div> <!-- header__inner -->
@@ -45,6 +42,7 @@
                 <div class="intro__item">
                     <h1 class="intro__title">Hi, my name is Seitek</h1>
                     <h2 class="intro__subtitle">I'm Front-end Web Developer</h2>
+                    <button class="btn">See my projects</button>
                 </div>
                 <div class="intro__item">
                     <div class="intro__type"><p class="type__text">Development in progress...</p></div>
@@ -70,7 +68,7 @@
                             <a class="stack__item">JavaScript</a>
                             <a class="stack__item">Git</a>
                         </div>
-                        <div class="description"><span>Description: </span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo explicabo ut doloremque. Magnam, molestiae illo.</div>
+                        <div class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo explicabo ut doloremque. Magnam, molestiae illo.</div>
                         <div class="links">
                             <a href="#" class="btn">Live preview</a>
                             <a href="#" class="btn btn_code">Github</a>
@@ -127,7 +125,7 @@
                     <h3 class="about__subtitle">Hello!</h3>
                     <div class="about__text">
                         <p>My name is Seitek and I'm Front-end Developer from Bishkek, Kyrgyzstan</p>
-                        <p>Feel free to write to me about anything. Whether it's a job opportunity or a chat</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate quos voluptas qui impedit magnam aliquam?</p>
                     </div>  
                 </div>
                 <div class="about__item">
@@ -151,32 +149,20 @@
         <div class="container">
             <h2 class="section__title">Get in touch</h2>
             <div class="contact__inner">
-                <div class="links">
-                    <h3>Contact info</h3>
-                    <p><img src="#" alt="#">clam.gilan@gmail.com</p>
-                    <p><img src="#" alt="#">Bishkek, Kyrgyzstan</p>
+                <div class="contact__info">
+                    <p>Feel free to write to me about anything. Whether it's a job opportunity or a chat</p>
+                    <img src="images/icons/mail.svg" alt="#">
+                    <p>clam.gilan@gmail.com</p>
                     <a href="https://github.com/Seytek" target="_blank"><img class="media__link" src="images/icons/github.svg" alt="#"></a>
                     <a href="https://www.linkedin.com/in/davletkulov/" target="_blank"><img class="media__link" src="images/icons/linkedin.svg" alt="#"></a>
-                    <a href="#" target="_blank"><img class="media__link" src="images/icons/mail.svg" alt="#"></a>
                 </div>
 
-                <form action="#" id="form" class="form__contact">
-                    <h3>Send a message</h3>
-                    <div class="form__item">
-                        <label for="form__name" class="form__label">Name*</label>
-                        <input type="text" name="name" id="form__name" class="form__input">
-
-                        <label for="form__email" class="form__label">E-mail*</label>
-                        <input type="text" name="email" id="form__email" class="form__input">
-
-                        <label for="form__topic" class="form__label">Topic</label>
-                        <input type="text" name="topic" id="form__topic" class="form__input">
-
-                        <label for="form__comment" class="form__label">Comment*</label>
-                        <textarea name="comment" id="form__comment" cols="30" rows="4"></textarea>
-
-                        <button href="#" class="btn">Send</button>
-                    </div>
+                <form action="#" class="contact__form">
+                    <input type="text" name="name" id="form__name" class="form__input">
+                    <input type="text" name="email" id="form__email" class="form__input">
+                    <input type="text" name="topic" id="form__topic" class="form__input">
+                    <textarea name="comment" id="form__comment" cols="30" rows="4"></textarea>
+                    <button href="#" class="btn">Send Message</button>
                 </form>
             </div>
         </div>
@@ -191,5 +177,7 @@
             </div>
         </div>
     </footer>
+
+    <script src="js/app.js"></script>
 </body>
 </html>
