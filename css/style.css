@@ -9,7 +9,7 @@
 
 button {
   font-size: inherit;
-  font-family: 'Mulish', sans-serif;
+  font-family: "Mulish", sans-serif;
 }
 
 a {
@@ -18,12 +18,13 @@ a {
 
 html {
   scroll-behavior: smooth;
+  font-size: 62.5%;
 }
 
 body {
   background: #f8efe8;
-  font-family: 'Mulish', sans-serif;
-  font-size: 18px;
+  font-family: "Mulish", sans-serif;
+  font-size: 1.8rem;
 }
 
 .container {
@@ -132,31 +133,40 @@ body {
 }
 
 .intro {
-  height: 100vh;
+  height: 65rem;
   background: #f8efe8;
+  padding: 25rem 0px;
 }
 
 .intro .intro__inner {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 280px 0 0 0;
 }
 
 .intro .intro__item {
   width: 50%;
 }
 
-.intro .intro__title {
-  font-family: 'Didact Gothic', sans-serif;
-  font-size: 65px;
+.intro .intro__suptitle {
+  font-family: "Didact Gothic", sans-serif;
+  font-size: 30px;
   margin-bottom: 20px;
   font-weight: 700;
+  line-height: 0.8;
+}
+
+.intro .intro__title {
+  font-family: "Didact Gothic", sans-serif;
+  font-size: 60px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  line-height: 0.8;
 }
 
 .intro .intro__subtitle {
-  font-family: 'Overpass Mono', monospace;
-  font-size: 25px;
+  font-family: "Didact Gothic", sans-serif;
+  font-size: 30px;
   color: #757575;
   line-height: 1.2;
   margin-bottom: 20px;
@@ -172,6 +182,14 @@ body {
   border-radius: 5px;
   background: #f8efe8;
   font-size: 20px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.intro .btn:hover {
+  background-color: #000;
+  color: #fff;
 }
 
 .intro__type {
@@ -185,7 +203,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-family: 'Overpass Mono', monospace;
+  font-family: "Overpass Mono", monospace;
   font-size: 25px;
 }
 
@@ -242,7 +260,7 @@ body {
 }
 
 .project {
-  height: 100vh;
+  height: 80rem;
   background: #fff;
   padding: 50px 0px;
 }
@@ -303,7 +321,7 @@ body {
   background-color: #fff;
   color: #000;
   border: 1px solid;
-  border-radius: 5px;
+  border-radius: 50px;
   padding: 5px 15px;
   font-size: 15px;
 }
@@ -320,15 +338,18 @@ body {
   font-size: 18px;
   font-weight: 500;
   color: #fff;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 
-.project .btn_code {
+.project .btn:hover {
   background: #fff;
   color: #000;
 }
 
 .section__title {
-  font-family: 'Overpass Mono', monospace;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
   margin-bottom: 40px;
   font-size: 38px;
   text-transform: uppercase;
@@ -336,7 +357,7 @@ body {
 
 .about {
   margin: 160px 0px 100px 0px;
-  height: 60vh;
+  height: 40rem;
 }
 
 .about .about__inner {
@@ -347,12 +368,9 @@ body {
       grid-template-columns: 50% 50%;
 }
 
-.about .about__subtitle {
-  font-size: 30px;
-}
-
 .about .about__text {
   font-size: 22px;
+  line-height: 1.6;
 }
 
 .about .skill__title {
@@ -380,6 +398,7 @@ body {
 }
 
 .contact {
+  height: 65rem;
   padding: 50px 0px;
   background: #fff;
 }
@@ -411,6 +430,11 @@ body {
   gap: 20px;
 }
 
+.contact .info__mail {
+  font-weight: 700;
+  font-size: 20px;
+}
+
 .contact .links {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -427,8 +451,8 @@ body {
 }
 
 .contact img {
-  height: 70px;
-  width: 70px;
+  height: 60px;
+  width: 60px;
 }
 
 .contact .contact__form {
@@ -463,8 +487,16 @@ body {
   padding: 15px 0px;
   border-radius: 5px;
   font-size: inherit;
+  cursor: pointer;
   background: #fff;
   color: #000;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.contact button:hover {
+  background: #000;
+  color: #fff;
 }
 
 .footer {
