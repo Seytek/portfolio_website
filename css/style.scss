@@ -11,6 +11,7 @@ $font_mulish: 'Mulish', sans-serif;
 $font_overpass: 'Overpass Mono', monospace;
 $font_mont: 'Montserrat', sans-serif;
 
+
 // Reset ____________________________________________________
 * {
     margin: 0;
@@ -35,13 +36,27 @@ body {
     font-size: 1.8rem;
 }
 
+
 // Container ____________________________________________________
 .container {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0px 15px;
     z-index: 1000;
+
+    // Media queries
+    @media (max-width:1300px) {
+        max-width: 991px;
+    }
+    @media (max-width: 1100px) {
+        max-width: 900px;
+    }
+    @media (max-width: 910px) {
+        padding: 0px 30px;
+    }
 }
+
 
 // Header ____________________________________________________
 .header {
@@ -79,7 +94,7 @@ body {
         opacity: 1;
     }
 
-    //Create borgir :)
+    //Create burger
     .menu {
         display: none;
     }
@@ -110,26 +125,24 @@ body {
     }
 
 
+
+    // Media queries
     @media (max-width: 1300px) {
-        .container {
-            max-width: 991px;
-        }
+       
     }
     @media (max-width: 1100px) {
-        .container {
-            max-width: 767px;
-        }
+        
     }
-    @media (max-width: 991px) {
-        .nav {
-            display: none;
-        }
-        .menu {
-            display: grid;
-            gap: 5px;
-        }
+    @media (max-width: 910px) {
+       .nav {
+           display: none;
+       }
+       .menu {
+           display: block;
+       }
     }
 }
+
 
 // Intro ____________________________________________________
 .intro {
@@ -182,7 +195,31 @@ body {
         background-color: $color_black;
         color: $color_white;
     }
+
+
+    // Media queries
+    @media (max-width: 1300px) {
+        .intro__item {
+             width: 100%;
+        }
+        .intro__item.type {
+            display: none;
+        }
+    }
+    @media (max-width: 630px) {
+        .intro__suptitle {
+            font-size: 22px;
+        }
+        .intro__title {
+            font-size: 52px;
+            line-height: 1;
+        }
+        .intro__subtitle {
+            font-size: 22px;
+        }
+    }
 }
+
 
 //Typing message ____________________________________________________
 .intro__type {
@@ -227,9 +264,10 @@ body {
     }
 }
 
+
 // Projects ____________________________________________________
 .project {
-    height: 80rem;
+    height: auto;
     background: $color_white;
     padding: 50px 0px;
 
@@ -256,7 +294,6 @@ body {
         border-radius: 10px 10px 0 0;
         width: 100%;
     }
-
     .project__info {
         margin: 15px;
         display: grid;
@@ -271,7 +308,6 @@ body {
         display: flex;
         gap: 5px;
         flex-wrap: wrap;
-
     }
     .stack__item {
         background-color: $color_white;
@@ -299,7 +335,33 @@ body {
         background: $color_white;
         color: $color_black;
     }
+
+
+
+    // Media queries
+    @media (max-width: 1300px) {
+        .project__inner {
+            grid-template-columns: 50% 50%;
+        }
+    }
+    @media (max-width: 768px) {
+        .project__inner {
+            grid-template-columns: 100%;
+        }
+        .links {
+            margin: 10px 0px;
+        }
+    }
+    @media (max-width: 410px) {
+        .links{
+            display: flex;
+            gap: 5px;
+            flex-direction: column;
+        }
+    }
 }
+
+
 
 // Title of section ____________________________________________________
 .section__title {
@@ -308,12 +370,19 @@ body {
     margin-bottom: 40px;
     font-size: 38px;
     text-transform: uppercase;
+
+
+    // Media queries
+    @media (max-width: 1300px) {
+        font-size: 30px;
+    }
 }
+
 
 // About me ____________________________________________________
 .about {
-    margin: 160px 0px 100px 0px;
-    height: 40rem;
+    padding: 150px 0px;
+    height: auto;
 
     .about__inner {
         display: grid;
@@ -342,12 +411,25 @@ body {
         border-radius: 5px;
         padding: 5px 15px;
     }
+
+
+    // Media queries
+    @media (max-width: 1100px) {
+       .about__inner {
+           grid-template-columns: 100%;
+       }
+    }
+    @media (max-width: 630px) {
+       .about__text {
+           font-size: 18px;
+       }
+    }
 }
 
 
 // Contact me ____________________________________________________
 .contact {
-    height: 65rem;
+    height: auto;
     padding: 50px 0px;
     background: $color_white;
 
@@ -387,7 +469,7 @@ body {
 
 
     .contact__form {
-        padding: 20px 70px;
+        padding: 20px 40px;
         display: grid;
         gap: 20px;
     }
@@ -423,6 +505,24 @@ body {
     button:hover {
         background: $color_black;
         color: $color_white;
+    }
+
+
+    // Media queries
+    @media (max-width: 1100px) {
+       .contact__inner {
+           grid-template-columns: 100%;
+       }
+    }
+    @media (max-width: 768px) {
+        .contact__form {
+            pad: 15px 10px;
+        }
+    }
+    @media (max-width: 630px) {
+       .contact__form {
+           padding: 15px 0px;
+       }
     }
 }
 
