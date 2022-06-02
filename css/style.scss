@@ -60,10 +60,6 @@ body {
 
 // Header ____________________________________________________
 .header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0; // like margin: auto;
     background: $bgColor;
     border-bottom: 1px solid rgb(185, 178, 178);
 
@@ -94,7 +90,38 @@ body {
         opacity: 1;
     }
 
-    //Create burger
+    // Header fixed position 
+    &.fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+
+        .header__inner {
+            padding: 8px 0px;
+        }
+        .header__logo {
+            font-size: 35px;
+        }
+        .nav__link {
+            font-size: 18px;
+        }
+
+        animation: headerfixed 1s;
+    }
+    @keyframes headerfixed {
+        0% {
+            opacity: 0;
+            transform: translateY(-70px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+
+    // Menu burger _____________________
     .menu {
         display: none;
     }
@@ -124,9 +151,7 @@ body {
         top: 8px;
     }
 
-
-
-    // Media queries
+    // Media queries __________________________
     @media (max-width: 1300px) {
        
     }
@@ -144,11 +169,11 @@ body {
 }
 
 
+
 // Intro ____________________________________________________
 .intro {
-    height: 65rem;
     background: $bgColor;
-    padding: 25rem 0px;
+    padding: 150px 0px;
 
 
     .intro__inner {
@@ -267,7 +292,6 @@ body {
 
 // Projects ____________________________________________________
 .project {
-    height: auto;
     background: $color_white;
     padding: 50px 0px;
 
@@ -382,7 +406,6 @@ body {
 // About me ____________________________________________________
 .about {
     padding: 150px 0px;
-    height: auto;
 
     .about__inner {
         display: grid;
@@ -429,10 +452,8 @@ body {
 
 // Contact me ____________________________________________________
 .contact {
-    height: auto;
     padding: 50px 0px;
     background: $color_white;
-
 
     .contact__inner {
         display: grid;
