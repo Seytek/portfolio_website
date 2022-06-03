@@ -18,7 +18,7 @@ a {
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 60px;
+  scroll-padding-top: 54px;
   font-size: 62.5%;
 }
 
@@ -72,10 +72,21 @@ body {
   padding: 15px 0;
 }
 
+.header .header__logo {
+  font-size: 35px;
+  font-weight: 700;
+  color: #000;
+}
+
+.header .nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 18px;
+  gap: 30px;
+}
+
 .header .nav__link {
-  font-size: 20px;
-  margin-left: 30px;
-  text-decoration: none;
   color: #000;
   text-transform: uppercase;
   opacity: 0.75;
@@ -83,14 +94,20 @@ body {
   transition: 0.2s linear;
 }
 
-.header .header__logo {
-  font-size: 40px;
-  font-weight: 700;
-  text-decoration: none;
-  color: #000;
+.header .nav__link::after {
+  content: "";
+  display: block;
+  margin-top: 5px;
+  width: 100%;
+  height: 3px;
+  background: #000;
+  opacity: 0;
+  -webkit-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear;
 }
 
-.header .nav__link:hover {
+.header .nav__link:hover,
+.header .nav__link:hover::after {
   opacity: 1;
 }
 
@@ -105,7 +122,7 @@ body {
 }
 
 .header.fixed .header__inner {
-  padding: 8px 0px;
+  padding: 5px 0px;
 }
 
 .header.fixed .header__logo {
@@ -195,37 +212,31 @@ body {
 
 .intro .intro__item {
   width: 50%;
+  line-height: 1.2;
 }
 
 .intro .intro__suptitle {
   font-family: "Didact Gothic", sans-serif;
-  font-size: 30px;
-  margin-bottom: 20px;
-  font-weight: 700;
-  line-height: 0.8;
+  color: #757575;
+  font-size: 35px;
+  font-weight: 600;
 }
 
 .intro .intro__title {
   font-family: "Didact Gothic", sans-serif;
   font-size: 60px;
-  margin-bottom: 20px;
   font-weight: 700;
-  line-height: 0.8;
 }
 
 .intro .intro__subtitle {
   font-family: "Didact Gothic", sans-serif;
-  font-size: 30px;
+  font-size: 35px;
+  font-weight: 600;
   color: #757575;
-  line-height: 1.2;
-  margin-bottom: 20px;
-}
-
-.intro .intro__media {
-  margin-bottom: 20px;
 }
 
 .intro .btn {
+  margin-top: 20px;
   font-size: inherit;
   padding: 10px 30px;
   border-radius: 5px;
@@ -415,6 +426,16 @@ body {
 .project .btn:hover {
   background: #fff;
   color: #000;
+}
+
+.project .project__more {
+  margin-top: 40px;
+  text-align: right;
+}
+
+.project .project__more_link {
+  color: #000;
+  text-decoration: underline;
 }
 
 @media (max-width: 1300px) {

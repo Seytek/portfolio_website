@@ -28,7 +28,7 @@ a {
 }
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 60px;
+    scroll-padding-top: 54px;
     font-size: 62.5%;
 }
 body {
@@ -70,24 +70,36 @@ body {
         align-items: center;
         padding: 15px 0;
     }
+    .header__logo {
+        font-size: 35px;
+        font-weight: 700;
+        color: $color_black
+    }
+    .nav {
+        display: flex;
+        font-size: 18px;
+        gap: 30px;
+    }
     .nav__link {
-        font-size: 20px;
-        margin-left: 30px;
-        text-decoration: none;
         color: $color_black;
         text-transform: uppercase;
-
 
         opacity: 0.75;
         transition: 0.2s linear;
     }
-    .header__logo {
-        font-size: 40px;
-        font-weight: 700;
-        text-decoration: none;
-        color: $color_black
+    .nav__link::after {
+        content: "";
+        display: block;
+        margin-top: 5px;
+        width: 100%;
+        height: 3px;
+        background: $color_black;
+        opacity: 0;
+
+        transition: opacity 0.2s linear;
     }
-    .nav__link:hover {
+    .nav__link:hover,
+    .nav__link:hover::after {
         opacity: 1;
     }
 
@@ -100,7 +112,7 @@ body {
         z-index: 1000;
 
         .header__inner {
-            padding: 8px 0px;
+            padding: 5px 0px;
         }
         .header__logo {
             font-size: 35px;
@@ -182,32 +194,27 @@ body {
     }
     .intro__item {
         width: 50%;
+        line-height: 1.2;
     }
     .intro__suptitle {
         font-family: $font_didact;
-        font-size: 30px;
-        margin-bottom: 20px;
-        font-weight: 700;
-        line-height: 0.8;
+        color: $color_gray;
+        font-size: 35px;
+        font-weight: 600;
     }
     .intro__title {
         font-family: $font_didact;
         font-size: 60px;
-        margin-bottom: 20px;
         font-weight: 700;
-        line-height: 0.8;
     }
     .intro__subtitle {
         font-family: $font_didact;
-        font-size: 30px;
+        font-size: 35px;
+        font-weight: 600;
         color: $color_gray;
-        line-height: 1.2;
-        margin-bottom: 20px;
-    }
-    .intro__media {
-        margin-bottom: 20px;
     }
     .btn {
+        margin-top: 20px;
         font-size: inherit;
         padding: 10px 30px;
         border-radius: 5px;
@@ -361,6 +368,14 @@ body {
         color: $color_black;
     }
 
+    .project__more {
+        margin-top: 40px;
+        text-align: right;
+    }
+    .project__more_link {
+        color: $color_black;
+        text-decoration: underline;
+    }
 
 
     // Media queries
