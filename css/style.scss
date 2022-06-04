@@ -1,4 +1,3 @@
-// Variables
 $bgColor: #f8efe8;
 $bgColorFooter: #282828;
 $color_black: #000;
@@ -36,6 +35,9 @@ body {
     font-family: $font_mulish;
     font-size: 1.8rem;
 }
+.lock { //no permission to scroll the page when buger is opened
+    overflow: hidden;
+}
 
 
 // Container ____________________________________________________
@@ -45,22 +47,24 @@ body {
     margin: 0 auto;
     padding: 0px 15px;
     z-index: 1000;
+}
 
-    // Media queries
-    @media (max-width:1300px) {
-        max-width: 991px;
-    }
-    @media (max-width: 1100px) {
-        max-width: 900px;
-    }
-    @media (max-width: 910px) {
-        padding: 0px 30px;
-    }
+// Section title ____________________________________________________
+.section__title {
+    font-family: $font_mont;
+    font-weight: 600;
+    margin-bottom: 40px;
+    font-size: 38px;
+    text-transform: uppercase;
 }
 
 
 // Header ____________________________________________________
 .header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
     background: $bgColor;
     border-bottom: 1px solid rgb(185, 178, 178);
 
@@ -75,10 +79,10 @@ body {
         font-weight: 700;
         color: $color_black
     }
-    .nav {
+    .nav__items {
         display: flex;
-        font-size: 18px;
         gap: 30px;
+        font-size: 18px;
     }
     .nav__link {
         color: $color_black;
@@ -90,7 +94,7 @@ body {
     .nav__link::after {
         content: "";
         display: block;
-        margin-top: 5px;
+        margin-top: 3px;
         width: 100%;
         height: 3px;
         background: $color_black;
@@ -111,17 +115,13 @@ body {
         right: 0;
         z-index: 1000;
 
+        animation: headerfixed 0.5s;
+
+
         .header__inner {
             padding: 5px 0px;
         }
-        .header__logo {
-            font-size: 35px;
-        }
-        .nav__link {
-            font-size: 18px;
-        }
-
-        animation: headerfixed 1s;
+   
     }
     @keyframes headerfixed {
         0% {
@@ -163,22 +163,6 @@ body {
     .menu__item::after {
         top: 8px;
     }
-
-    // Media queries __________________________
-    @media (max-width: 1300px) {
-       
-    }
-    @media (max-width: 1100px) {
-        
-    }
-    @media (max-width: 910px) {
-       .nav {
-           display: none;
-       }
-       .menu {
-           display: block;
-       }
-    }
 }
 
 
@@ -186,8 +170,7 @@ body {
 // Intro ____________________________________________________
 .intro {
     background: $bgColor;
-    padding: 150px 0px;
-
+    padding: 200px 0px 150px 0px;
 
     .intro__inner {
         display: flex;
@@ -227,29 +210,6 @@ body {
     .btn:hover {
         background-color: $color_black;
         color: $color_white;
-    }
-
-
-    // Media queries
-    @media (max-width: 1300px) {
-        .intro__item {
-             width: 100%;
-        }
-        .intro__item.type {
-            display: none;
-        }
-    }
-    @media (max-width: 630px) {
-        .intro__suptitle {
-            font-size: 22px;
-        }
-        .intro__title {
-            font-size: 52px;
-            line-height: 1;
-        }
-        .intro__subtitle {
-            font-size: 22px;
-        }
     }
 }
 
@@ -368,53 +328,17 @@ body {
         color: $color_black;
     }
 
+
     .project__more {
         margin-top: 40px;
         text-align: right;
     }
-    .project__more_link {
+    .project__more-btn {
         color: $color_black;
+    }
+    .project__more-btn:hover {
+        color: blue;
         text-decoration: underline;
-    }
-
-
-    // Media queries
-    @media (max-width: 1300px) {
-        .project__inner {
-            grid-template-columns: 50% 50%;
-        }
-    }
-    @media (max-width: 768px) {
-        .project__inner {
-            grid-template-columns: 100%;
-        }
-        .links {
-            margin: 10px 0px;
-        }
-    }
-    @media (max-width: 410px) {
-        .links{
-            display: flex;
-            gap: 5px;
-            flex-direction: column;
-        }
-    }
-}
-
-
-
-// Title of section ____________________________________________________
-.section__title {
-    font-family: $font_mont;
-    font-weight: 600;
-    margin-bottom: 40px;
-    font-size: 38px;
-    text-transform: uppercase;
-
-
-    // Media queries
-    @media (max-width: 1300px) {
-        font-size: 30px;
     }
 }
 
@@ -453,20 +377,6 @@ body {
         border: 1px solid $color_lgray;
         border-radius: 5px;
         padding: 8px 15px;
-    }
-    
-
-
-    // Media queries
-    @media (max-width: 1100px) {
-       .about__inner {
-           grid-template-columns: 100%;
-       }
-    }
-    @media (max-width: 630px) {
-       .about__text {
-           font-size: 18px;
-       }
     }
 }
 
@@ -548,44 +458,18 @@ body {
         background: $color_black;
         color: $color_white;
     }
-
-
-    // Media queries
-    @media (max-width: 1100px) {
-       .contact__inner {
-           grid-template-columns: 100%;
-       }
-    }
-    @media (max-width: 768px) {
-        .contact__form {
-            pad: 15px 10px;
-        }
-    }
-    @media (max-width: 630px) {
-       .contact__form {
-           padding: 15px 0px;
-       }
-    }
 }
 
 
 // Footer ____________________________________________________
 .footer {
     background-color: $bgColorFooter;
-    color: $color_lgray;
 
-    .footer__inner {
-        display: flex;
-        justify-content: space-between;
-        padding: 30px 0;
-    }
-    .footer__title {
-        font-size: 20px;
-        font-weight: 700;
-        color: #bbbbbb;
-    }
-    .footer__text,
-    .footer__link {
-        color: $color_lgray;
+    .footer__text {
+        padding: 30px 0px;
+        color: $color_gray;
+        font-size: 15px;
     }
 }
+
+@import 'media';
