@@ -176,18 +176,22 @@ body {
         display: flex;
     }
     .intro__item {
-        width: 50%;
+        width: 100%;
         line-height: 1.2;
     }
-    .intro__suptitle {
-        font-family: $font_didact;
-        color: $color_gray;
-        font-size: 35px;
-        font-weight: 600;
+
+    .intro__links {
+        display: flex;
+        gap: 3px;
     }
+    .link__item {
+        width: 45px;
+        height: 45px;
+    }    
+
     .intro__title {
         font-family: $font_didact;
-        font-size: 60px;
+        font-size: 70px;
         font-weight: 700;
     }
     .intro__subtitle {
@@ -197,12 +201,16 @@ body {
         color: $color_gray;
     }
     .btn {
+        display: inline-block;
         margin-top: 20px;
-        font-size: inherit;
-        padding: 10px 30px;
+        padding: 10px 35px;
+        
+        border: 1px solid $color_gray;
         border-radius: 5px;
+        
+        color: $color_black;
         background: $bgColor;
-        font-size: 20px;
+        font-size: 22px;
         cursor: pointer;
 
         transition: all 0.3s linear;
@@ -210,50 +218,6 @@ body {
     .btn:hover {
         background-color: $color_black;
         color: $color_white;
-    }
-}
-
-
-//Typing message ____________________________________________________
-.intro__type {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: $font_overpass;
-    font-size: 25px;
-
-    .type__text {
-        position: relative;
-    }
-    .type__text::before,
-    .type__text::after {
-        position: absolute;
-        content: "";
-        top: 0;
-        right: 0;
-        left: 0;
-        bottom: 0;
-    }
-    .type__text::before {
-        background-color: $bgColor;
-        animation: typewriter 4s steps(26) 1s forwards; /*forwards - не возобновляет аниманию заново*/
-    }
-    .type__text::after {
-        width: 3.5px;
-        background: $color_black;
-        animation: typewriter 4s steps(26) 1s forwards,
-        blink 750ms steps(26) infinite;
-    }
-    @keyframes typewriter {
-        to { 
-            left: 100%;
-        }
-    }
-    @keyframes blink {
-        to {
-            background: transparent;
-        }
     }
 }
 
@@ -302,9 +266,9 @@ body {
         flex-wrap: wrap;
     }
     .stack__item {
-        background-color: $color_white;
+        background-color: rgb(240, 240, 240);
         color: $color_black;
-        border: 1px solid $color_gray;
+        // border: 1px solid $color_gray;
         border-radius: 50px;
         padding: 5px 15px;
         font-size: 15px;
@@ -329,18 +293,31 @@ body {
     }
 
 
-    .project__more {
+    .challenges__btn-block {
         margin-top: 40px;
         text-align: right;
     }
-    .project__more-btn {
+    .challenges__btn {
         color: $color_black;
     }
-    .project__more-btn:hover {
-        color: blue;
+    .challenges__btn:hover {
+        color: rgb(128, 70, 17);
         text-decoration: underline;
     }
 }
+
+.challenges__inner {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    gap: 10px;
+
+
+    .challenge__item {
+        border: 1px solid black;
+        border-radius: 5px;
+    }
+}
+
 
 
 // About me ____________________________________________________
@@ -354,8 +331,11 @@ body {
         grid-template-columns: 50% 50%;
     }
     .about__text {
+        display: flex;
+        flex-direction: column;
         font-size: 22px;
         line-height: 1.6;
+        gap: 20px;
     }
     .skill__title {
         font-size: 30px;

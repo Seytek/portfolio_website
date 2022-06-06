@@ -1,4 +1,3 @@
-@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -192,20 +191,25 @@ body {
 }
 
 .intro .intro__item {
-  width: 50%;
+  width: 100%;
   line-height: 1.2;
 }
 
-.intro .intro__suptitle {
-  font-family: "Didact Gothic", sans-serif;
-  color: #757575;
-  font-size: 35px;
-  font-weight: 600;
+.intro .intro__links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 3px;
+}
+
+.intro .link__item {
+  width: 45px;
+  height: 45px;
 }
 
 .intro .intro__title {
   font-family: "Didact Gothic", sans-serif;
-  font-size: 60px;
+  font-size: 70px;
   font-weight: 700;
 }
 
@@ -217,12 +221,14 @@ body {
 }
 
 .intro .btn {
+  display: inline-block;
   margin-top: 20px;
-  font-size: inherit;
-  padding: 10px 30px;
+  padding: 10px 35px;
+  border: 1px solid #757575;
   border-radius: 5px;
+  color: #000;
   background: #f8efe8;
-  font-size: 20px;
+  font-size: 22px;
   cursor: pointer;
   -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
@@ -231,73 +237,6 @@ body {
 .intro .btn:hover {
   background-color: #000;
   color: #fff;
-}
-
-.intro__type {
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-family: "Overpass Mono", monospace;
-  font-size: 25px;
-}
-
-.intro__type .type__text {
-  position: relative;
-}
-
-.intro__type .type__text::before,
-.intro__type .type__text::after {
-  position: absolute;
-  content: "";
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-}
-
-.intro__type .type__text::before {
-  background-color: #f8efe8;
-  -webkit-animation: typewriter 4s steps(26) 1s forwards;
-          animation: typewriter 4s steps(26) 1s forwards;
-  /*forwards - не возобновляет аниманию заново*/
-}
-
-.intro__type .type__text::after {
-  width: 3.5px;
-  background: #000;
-  -webkit-animation: typewriter 4s steps(26) 1s forwards, blink 750ms steps(26) infinite;
-          animation: typewriter 4s steps(26) 1s forwards, blink 750ms steps(26) infinite;
-}
-
-@-webkit-keyframes typewriter {
-  to {
-    left: 100%;
-  }
-}
-
-@keyframes typewriter {
-  to {
-    left: 100%;
-  }
-}
-
-@-webkit-keyframes blink {
-  to {
-    background: transparent;
-  }
-}
-
-@keyframes blink {
-  to {
-    background: transparent;
-  }
 }
 
 .project {
@@ -358,9 +297,8 @@ body {
 }
 
 .project .stack__item {
-  background-color: #fff;
+  background-color: #f0f0f0;
   color: #000;
-  border: 1px solid #757575;
   border-radius: 50px;
   padding: 5px 15px;
   font-size: 15px;
@@ -387,18 +325,31 @@ body {
   color: #000;
 }
 
-.project .project__more {
+.project .challenges__btn-block {
   margin-top: 40px;
   text-align: right;
 }
 
-.project .project__more-btn {
+.project .challenges__btn {
   color: #000;
 }
 
-.project .project__more-btn:hover {
-  color: blue;
+.project .challenges__btn:hover {
+  color: #804611;
   text-decoration: underline;
+}
+
+.challenges__inner {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 33% 33% 33%;
+      grid-template-columns: 33% 33% 33%;
+  gap: 10px;
+}
+
+.challenges__inner .challenge__item {
+  border: 1px solid black;
+  border-radius: 5px;
 }
 
 .about {
@@ -415,8 +366,16 @@ body {
 }
 
 .about .about__text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   font-size: 22px;
   line-height: 1.6;
+  gap: 20px;
 }
 
 .about .skill__title {
