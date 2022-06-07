@@ -53,7 +53,7 @@ body {
 .section__title {
     font-family: $font_mont;
     font-weight: 600;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
     font-size: 38px;
     text-transform: uppercase;
 }
@@ -88,7 +88,6 @@ body {
         color: $color_black;
         text-transform: uppercase;
 
-        opacity: 0.75;
         transition: 0.2s linear;
     }
     .nav__link::after {
@@ -102,7 +101,6 @@ body {
 
         transition: opacity 0.2s linear;
     }
-    .nav__link:hover,
     .nav__link:hover::after {
         opacity: 1;
     }
@@ -230,7 +228,7 @@ body {
     .project__inner {
         display: grid;
         gap: 15px;
-        grid-template-columns: 33% 33% 33%;
+        grid-template-columns: 1fr 1fr 1fr;
     }
     .project__item {
         background-color: $color_white;
@@ -245,11 +243,40 @@ body {
         box-shadow: 2px 5px 8px $color_lgray;
     }
 
-    
+    // Image block
     .project__img {
-        border-radius: 10px 10px 0 0;
+        position: relative;
         width: 100%;
     }
+    .img {
+
+        width: 100%;
+        border-radius: 10px 10px 0 0;
+    }
+    .img__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: $bgColor;
+        font-size: 25px;
+        opacity: 0;
+        display: flex;
+        align-items: center; // vertical
+        justify-content: center; // horizontal
+
+        transition: all 0.2s linear;
+    }
+    .img__overlay:hover {
+        opacity: 70%;
+    }
+    .img__btn {
+        height: 60px;
+        width: 60px;
+    }
+
+    // Information block
     .project__info {
         margin: 15px;
         display: grid;
@@ -266,21 +293,20 @@ body {
         flex-wrap: wrap;
     }
     .stack__item {
-        background-color: rgb(240, 240, 240);
+        background-color: $bgColor;
         color: $color_black;
-        // border: 1px solid $color_gray;
-        border-radius: 50px;
+        border-radius: 10px;
         padding: 5px 15px;
-        font-size: 15px;
+        font-size: 16px;
     }
     .links {
-        margin: 50px 0px 10px 0px;
+        margin: 10px 0px;
     }
     .btn {
-        padding: 8px 30px;
+        padding: 8px 25px;
         background-color: $color_black;
-        border-radius: 5px;
-        border: 1px solid black;
+        border-radius: 6px;
+        border: 1px solid $color_black;
         font-size: 18px;
         font-weight: 500;
         color: $color_white;
@@ -290,52 +316,82 @@ body {
     .btn:hover {
         background: $color_white;
         color: $color_black;
+        border: 1px solid $color_gray;
     }
 
-
-    .challenges__btn-block {
+    // See more projects button
+    .challenges__block {
         margin-top: 40px;
         text-align: right;
     }
     .challenges__btn {
         color: $color_black;
+        text-decoration: underline;
     }
     .challenges__btn:hover {
-        color: rgb(128, 70, 17);
-        text-decoration: underline;
+        color: chocolate;
+    }
+    .challenges {
+        display: none;
     }
 }
 
+
+
+// Small challenges ____________________________________________________
 .challenges__inner {
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 10px;
 
 
     .challenge__item {
         border: 1px solid black;
-        border-radius: 5px;
+        border-radius: 10px;
+    }
+
+    .challenge__icon {
+        width: 70px;
+        height: 70px;
+        border-radius: 10px;
+    }
+    .challenge__info {
+        margin: 10px 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .challenge__title {
+        font-weight: 700;
+    }
+    .challenge__btn {
+        display: flex;
+        justify-content: space-between;
     }
 }
 
 
-
 // About me ____________________________________________________
 .about {
-    padding: 50px 0px 100px;
+    padding: 50px 0px 80px;
 
     .about__inner {
-        padding: 50px 0px;
         display: grid;
+        grid-template-columns: 1fr 1fr;
         gap: 50px;
-        grid-template-columns: 50% 50%;
     }
     .about__text {
         display: flex;
         flex-direction: column;
-        font-size: 22px;
         line-height: 1.6;
         gap: 20px;
+    }
+    .about__resume {
+        color: $color_black;
+        text-decoration: underline;
+    }
+    .about__resume:hover {
+        color: chocolate;
     }
     .skill__title {
         font-size: 30px;
@@ -354,8 +410,7 @@ body {
     .skill__item {
         background-color: $color_white;
         color: $color_black;
-        border: 1px solid $color_lgray;
-        border-radius: 5px;
+        border-radius: 10px;
         padding: 8px 15px;
     }
 }
@@ -363,45 +418,32 @@ body {
 
 // Contact me ____________________________________________________
 .contact {
-    padding: 50px 0px;
     background: $color_white;
+    padding: 50px 0px;
 
     .contact__inner {
         display: grid;
         gap: 30px;
-        grid-template-columns: 40% 60%;
-        border-radius: 20px;
+        grid-template-columns: 1fr 1fr;
     }
+    // Contact left side - info
     .contact__info {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        gap: 20px;
-    }
-    .info__mail {
-        font-weight: 700;
-        font-size: 20px;
-    }
-    .links {
-        display: flex;
-        gap: 10px;
+        gap: 30px;
     }
     .info__title {
-        font-size: 30px;
+        font-size: 25px;
     }
-    .info__text {
-        margin: 10px;
+    .info__mail-img {
+        font-weight: 700;
     }
-    img {
-        height: 60px;
-        width: 60px;
+    .link__item {
+        height: 45px;
+        width: 45px;
     }
-
-
+    // Contact right side - form
     .contact__form {
-        padding: 20px 40px;
         display: grid;
         gap: 20px;
     }
@@ -424,8 +466,8 @@ body {
         min-height: 150px;
     }
     button {
-        max-width: 250px;
-        padding: 15px 0px;
+        width: 220px;
+        padding: 10px;
         border-radius: 5px;
         font-size: inherit;
         cursor: pointer;

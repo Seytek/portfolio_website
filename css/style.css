@@ -42,7 +42,7 @@ body {
 .section__title {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
   font-size: 38px;
   text-transform: uppercase;
 }
@@ -86,7 +86,6 @@ body {
 .header .nav__link {
   color: #000;
   text-transform: uppercase;
-  opacity: 0.75;
   -webkit-transition: 0.2s linear;
   transition: 0.2s linear;
 }
@@ -103,7 +102,6 @@ body {
   transition: opacity 0.2s linear;
 }
 
-.header .nav__link:hover,
 .header .nav__link:hover::after {
   opacity: 1;
 }
@@ -248,8 +246,8 @@ body {
   display: -ms-grid;
   display: grid;
   gap: 15px;
-  -ms-grid-columns: 33% 33% 33%;
-      grid-template-columns: 33% 33% 33%;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
 }
 
 .project .project__item {
@@ -270,8 +268,44 @@ body {
 }
 
 .project .project__img {
-  border-radius: 10px 10px 0 0;
+  position: relative;
   width: 100%;
+}
+
+.project .img {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+}
+
+.project .img__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #f8efe8;
+  font-size: 25px;
+  opacity: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.project .img__overlay:hover {
+  opacity: 70%;
+}
+
+.project .img__btn {
+  height: 60px;
+  width: 60px;
 }
 
 .project .project__info {
@@ -297,22 +331,22 @@ body {
 }
 
 .project .stack__item {
-  background-color: #f0f0f0;
+  background-color: #f8efe8;
   color: #000;
-  border-radius: 50px;
+  border-radius: 10px;
   padding: 5px 15px;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .project .links {
-  margin: 50px 0px 10px 0px;
+  margin: 10px 0px;
 }
 
 .project .btn {
-  padding: 8px 30px;
+  padding: 8px 25px;
   background-color: #000;
-  border-radius: 5px;
-  border: 1px solid black;
+  border-radius: 6px;
+  border: 1px solid #000;
   font-size: 18px;
   font-weight: 500;
   color: #fff;
@@ -323,46 +357,81 @@ body {
 .project .btn:hover {
   background: #fff;
   color: #000;
+  border: 1px solid #757575;
 }
 
-.project .challenges__btn-block {
+.project .challenges__block {
   margin-top: 40px;
   text-align: right;
 }
 
 .project .challenges__btn {
   color: #000;
+  text-decoration: underline;
 }
 
 .project .challenges__btn:hover {
-  color: #804611;
-  text-decoration: underline;
+  color: chocolate;
+}
+
+.project .challenges {
+  display: none;
 }
 
 .challenges__inner {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 33% 33% 33%;
-      grid-template-columns: 33% 33% 33%;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
   gap: 10px;
 }
 
 .challenges__inner .challenge__item {
   border: 1px solid black;
-  border-radius: 5px;
+  border-radius: 10px;
+}
+
+.challenges__inner .challenge__icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+}
+
+.challenges__inner .challenge__info {
+  margin: 10px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+}
+
+.challenges__inner .challenge__title {
+  font-weight: 700;
+}
+
+.challenges__inner .challenge__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .about {
-  padding: 50px 0px 100px;
+  padding: 50px 0px 80px;
 }
 
 .about .about__inner {
-  padding: 50px 0px;
   display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
   gap: 50px;
-  -ms-grid-columns: 50% 50%;
-      grid-template-columns: 50% 50%;
 }
 
 .about .about__text {
@@ -373,9 +442,17 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  font-size: 22px;
   line-height: 1.6;
   gap: 20px;
+}
+
+.about .about__resume {
+  color: #000;
+  text-decoration: underline;
+}
+
+.about .about__resume:hover {
+  color: chocolate;
 }
 
 .about .skill__title {
@@ -400,23 +477,21 @@ body {
 .about .skill__item {
   background-color: #fff;
   color: #000;
-  border: 1px solid #d9d9d9;
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 8px 15px;
 }
 
 .contact {
-  padding: 50px 0px;
   background: #fff;
+  padding: 50px 0px;
 }
 
 .contact .contact__inner {
   display: -ms-grid;
   display: grid;
   gap: 30px;
-  -ms-grid-columns: 40% 60%;
-      grid-template-columns: 40% 60%;
-  border-radius: 20px;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
 }
 
 .contact .contact__info {
@@ -427,43 +502,23 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  text-align: center;
-  gap: 20px;
-}
-
-.contact .info__mail {
-  font-weight: 700;
-  font-size: 20px;
-}
-
-.contact .links {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 10px;
+  gap: 30px;
 }
 
 .contact .info__title {
-  font-size: 30px;
+  font-size: 25px;
 }
 
-.contact .info__text {
-  margin: 10px;
+.contact .info__mail-img {
+  font-weight: 700;
 }
 
-.contact img {
-  height: 60px;
-  width: 60px;
+.contact .link__item {
+  height: 45px;
+  width: 45px;
 }
 
 .contact .contact__form {
-  padding: 20px 40px;
   display: -ms-grid;
   display: grid;
   gap: 20px;
@@ -490,8 +545,8 @@ body {
 }
 
 .contact button {
-  max-width: 250px;
-  padding: 15px 0px;
+  width: 220px;
+  padding: 10px;
   border-radius: 5px;
   font-size: inherit;
   cursor: pointer;
